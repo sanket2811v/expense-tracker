@@ -195,62 +195,6 @@ Base URL (local): `http://localhost:5000`
 
 **Categories:** Food, Transport, Shopping, Bills, Entertainment, Health, Education, Other
 
----
-
-## Screenshots
-
-> Add your screenshots here after running the app.
-
-| Dashboard | Mobile |
-|-----------|--------|
-| ![Desktop](./screenshots/desktop.png) | ![Mobile](./screenshots/mobile.png) |
-
----
-
-## Deployment
-
-### MongoDB Atlas
-
-1. Create a cluster at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
-2. Create a database user and set a password.
-3. Under **Network Access**, allow `0.0.0.0/0` (or your host IPs).
-4. Copy the connection string and set it as `MONGODB_URI` on the backend.
-
-### Backend — Render
-
-1. Push this repo to GitHub.
-2. On [Render](https://render.com), create a **New Web Service**.
-3. Connect the repository and set:
-   - **Root Directory:** `backend`
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-4. Add environment variables:
-
-| Key          | Value                                                         |
-|--------------|---------------------------------------------------------------|
-| `MONGODB_URI`| Your Atlas connection string                                  |
-| `CLIENT_URL` | Your Vercel frontend URL (e.g. `https://your-app.vercel.app`) |
-| `PORT`       | Optional — Render provides this automatically                 |
-
-5. Deploy and copy the service URL (e.g. `https://expense-api.onrender.com`).
-
-### Frontend — Vercel
-
-1. On [Vercel](https://vercel.com), import the same GitHub repository.
-2. Set:
-   - **Root Directory:** `frontend`
-   - **Framework Preset:** Vite
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-3. Add environment variable:
-
-| Key            | Value                                      |
-|----------------|--------------------------------------------|
-| `VITE_API_URL` | `https://your-backend.onrender.com/api`    |
-
-4. Deploy. Update Render `CLIENT_URL` to match the Vercel URL if you did not set it earlier.
-
----
 
 ## Environment Variables Summary
 
